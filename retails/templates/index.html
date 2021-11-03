@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <style>
+        .success{
+        color: green;
+                }
+
+         .info{
+         color: red;
+         }
+
+    </style>
+</head>
+<body>
+<form action ="" method="POST" novalidate>
+{%csrf_token%}
+{{forms}}<br><br>
+    <input type="submit" value="AddData">
+
+</form>
+{% if messages %}
+{% for x in messages %}
+<label class="{{ x.tags }}">
+   {{x}}
+</label>
+{% endfor %}
+{% endif %}
+</body>
+</html>
